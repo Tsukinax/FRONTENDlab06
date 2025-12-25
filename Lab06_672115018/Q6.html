@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life in Weeks</title>
+  </head>
+  <body>
+    <script>
+      // write your code here
+ 
+      let lifeCalculator = {
+        // Properties
+        daysInYear: 365,
+        weeksInYear: 52,
+        monthsInYear: 12,
+        maxAge: 90,
+
+     
+        calculateTimeLeft: function(currentAge) {
+          let yearsLeft = this.maxAge - currentAge;
+          let days = yearsLeft * this.daysInYear;
+          let weeks = yearsLeft * this.weeksInYear;
+          let months = yearsLeft * this.monthsInYear;
+          return {
+            days: days,
+            weeks: weeks,
+            months: months
+          };
+        },
+
+        displayTimeLeft: function(currentAge) {
+          let timeLeft = this.calculateTimeLeft(currentAge);
+          alert("You have " + timeLeft.days + " days, " + timeLeft.weeks + " weeks and " + timeLeft.months + " months left.");
+        }
+      };
+
+      let currentAge = prompt("What is your current age?");
+      
+      // Call displayTimeLeft method
+      lifeCalculator.displayTimeLeft(Number(currentAge));
+
+    </script>
+  </body>
+</html>

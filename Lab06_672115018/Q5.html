@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>99 Bottles Challenge</title>
+  </head>
+  <body>
+    <script>
+      // write your code here
+      // https://www.99-bottles-of-beer.net/lyrics.html
+      
+      // Create array from 99 down to 0
+      let bottles = [];
+      for (let i = 99; i >= 0; i--) {
+        bottles.push(i);
+      }
+
+  
+      function getBottleWord(num) {
+        if (num === 1) return "bottle";
+        return "bottles";
+      }
+
+    
+      function getBottleText(num) {
+        if (num === 0) return "no more bottle";
+        return num + " " + getBottleWord(num);
+      }
+
+      bottles.forEach(function(numberOfBottles) {
+        let bottleWord = getBottleWord(numberOfBottles);
+        
+        if (numberOfBottles > 0) {
+          console.log(numberOfBottles + " " + bottleWord + " of beer on the wall");
+          console.log(numberOfBottles + " " + bottleWord + " of beer,");
+          console.log("Take one down, pass it around,");
+          console.log(getBottleText(numberOfBottles - 1) + " of beer on the wall.");
+        }
+      });
+
+    </script>
+  </body>
+</html>
